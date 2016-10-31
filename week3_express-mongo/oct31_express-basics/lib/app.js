@@ -11,7 +11,19 @@ app.use(express.static(publicDir));
 //     res.send('hello world');
 // });
 
+app.set('view engine', 'pug');
+
+app.get('/treasure', (req, res) => {
+    res.render('treasure', { 
+        title: 'treasure ftw!',
+        message: 'find the map, find the treasure!'
+    });
+});
+
 app.get('/pirates', (req, res) => {
+    // request for /pirates
+    // for this app, this means send back 
+    // array of all pirate objects
     store.all()
         .then(pirates => res.send(pirates))
         .catch(err => console.log(err));
