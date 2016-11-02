@@ -5,7 +5,14 @@ const Pirate = require('../models/pirate');
 
 router
     .get('/', (req, res, next) => {
-        Pirate.find()
+        // by itself, {} will return all Pirates
+        const query = {};
+
+        // if we have a rank to query on, add that property
+        // (which will filter on pirates that have that rank)
+        if(req.query.rank) query.rank = req.query.rank;
+
+        Pirate.find(query)
             .then(pirates => res.send(pirates ))
             .catch(next);
     })

@@ -12,15 +12,19 @@ const app = require( '../lib/app' );
 describe( 'pirate', () => {
 
 	before( done => {
-		const name = 'pirates';
-		connection.on( 'open', () => {
+		const CONNECTED = 1;
+		if (connection.readyState === CONNECTED) dropCollection();
+		else connection.on('open', dropCollection);
+
+		function dropCollection(){
+			const name = 'pirates';
 			connection.db
 				.listCollections({ name })
 				.next( (err, collinfo) => {
 					if (!collinfo) return done();
-					connection.db.dropCollection( name, done );
+					connection.db.dropCollection(name, done);
 				});
-		});
+		}
 	});
 
 	const request = chai.request( app );

@@ -8,7 +8,7 @@
 ## Today's Learning Objectives
 
 * Install and run a local mongodb instance.
-* Code models that correspond to logic business entities (aka resource) 
+* Code models that correspond to logic business entities (aka resources, aka domain logic) 
 using mongoose running with NodeJS
 * Code an express Router that expose CRUD operations against the mongoose 
 models as a set of callable REST API endpoints.

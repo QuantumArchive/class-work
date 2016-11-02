@@ -16,13 +16,14 @@ const schema = new mongoose.Schema({
 });
 
 const Unicorn = mongoose.model('Unicorn', schema);
+console.log(Unicorn.modelName);
 
-// create a new unicorn
+//create a new unicorn
 // const lilac = new Unicorn({ name: 'lilac', horn: 'titanium' });
 
 // lilac.save()
 //     .then(savedUnicorn => console.log(savedUnicorn))
 //     .catch(err => console.error(err));
 
-Unicorn.find()
-    .then(unicorns => console.log(unicorns));
+// Unicorn.find()
+//     .then(unicorns => console.log(unicorns));

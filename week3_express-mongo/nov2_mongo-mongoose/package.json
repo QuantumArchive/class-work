@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "DEBUG=myapp.* nodemon server.js",
-    "test": "nodemon --exec mocha"
+    "test": "MONGODB_URI=mongodb://localhost/pirates-test mocha",
+    "test:watch": "MONGODB_URI=mongodb://localhost/pirates-test nodemon --exec mocha"
   },
   "author": "Marty Nelson <marty@martypdx.com>",
   "license": "ISC",
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "mocha": "^2.5.3",
     "morgan": "^1.7.0",
     "nodemon": "^1.9.2"
