@@ -1,0 +1,1 @@
+console.log('foo and bar are', process.env.FOO, process.env.BAR);
