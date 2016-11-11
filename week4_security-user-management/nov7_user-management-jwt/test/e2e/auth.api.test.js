@@ -47,7 +47,6 @@ describe('auth', () => {
                     }
                 );
         
-
         it('signup requires username', () => 
             badRequest('/api/auth/signup', { password: 'abc' }, 'username and password must be supplied')
         );		
@@ -80,7 +79,7 @@ describe('auth', () => {
             request
                 .post('/api/auth/signin')
                 .send(user)
-                .then(res => assert.equal(res.body.token, token))
+                .then(res => assert.ok(res.body.token))
         );
 
     });
