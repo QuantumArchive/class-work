@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="ngEditor">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
+    
+    <script src="app.js"></script>
+    <style>
+        .message {
+            min-height: 30px;
+            box-sizing: border-box;
+            border: 1px solid #aaa;
+            padding: 10px;
+            color: pink;
+        }
+
+        .fancy {
+            font-family: cursive;
+            color: black;
+        }
+        
+        .plain {
+            font-family: monospace;
+            color: #aaa;
+        }
+
+        .modern {
+            font-family: sans-serif;
+            color: steelblue;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div ng-controller="main">
+      <label>Message:</label>
+      <input type="text" ng-model="message" placeholder="Enter a name here">
+
+      <select ng-model="style" ng-options="s for s in styles"></select>
+
+      <input type="range" ng-model="fontSize" min="12" max="76">
+      
+      <hr>
+      <div class="message {{style}}" 
+           style="font-size: {{fontSize}}px;">
+          {{message}}
+      </div>
+    </div>
+  </body>
+</html>
