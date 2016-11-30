@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Our First Webpack App</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <section ng-controller="cowsay">
+        <input ng-model="message">
+        <pre>{{say(message)}}</pre>
+    </section>
+
+    <!--<section ng-controller="implicit">
+        {{ message }}
+    </section>
+    <section ng-controller="explicit">
+        {{ message }}
+    </section>
+    <section ng-controller="inject">
+        {{ message }}
+    </section>-->
+</body>
+</html>
