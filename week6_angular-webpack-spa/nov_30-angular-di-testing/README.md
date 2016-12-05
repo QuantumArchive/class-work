@@ -69,4 +69,4 @@
             * Controller functionality
             * Code you wrote
             * (not Angular)
-3. Basic Routing
+3. (Basic Routing)

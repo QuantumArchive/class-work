@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Our First Webpack App</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Adventure Game</h1>
+    <main ng-controller="game">
+        <section ng-controller="player">
+            <h4>{{player.name}}</h4>
+            <p ng-controller="actions">Your inventory
+                <span ng-if="!player.inventory.length">is empty</span>
+                <span ng-if="player.inventory.length">consists of</span>
+                <span ng-repeat="item in player.inventory">
+                    a {{item}}
+                    <button 
+                        class="action"
+                        ng-click="player.drop(item)">
+                        drop
+                    </button>            
+                    <span ng-if="!$last && shouldComma(getInventoryCount())">,</span>
+                    <span ng-if="!shouldComma(getInventoryCount())">&nbsp;</span>
+                    <span ng-if="shouldConjoin($index, getInventoryCount())">and</span>
+                </span>
+            </p>
+
+        </section>
+
+        <section ng-controller="room">
+            <h4>You are in room {{getLocation().name}}</h4>
+            <p>{{getLocation().description}}.</div>
+        </section>
+
+        <section ng-controller="actions">
+            <p>You can go to the
+                <span ng-repeat="(direction, room) in getLocation().directions">
+                    <button 
+                        class="action"
+                        ng-click="player.move(direction)">
+                        {{direction}}
+                    </button>
+                    <span ng-if="!$last && shouldComma(getDirCount())">,</span>
+                    <span ng-if="!shouldComma(getDirCount())">&nbsp;</span>
+                    <span ng-if="shouldConjoin($index, getDirCount())">or</span>
+                </span>
+            </p>
+
+            <p ng-if="getLocation().items.length">You see
+                <span ng-repeat="item in getLocation().items">
+                    a {{item}} 
+                    <button 
+                        class="action"
+                        ng-click="player.pickup(item)">
+                        pick up
+                    </button>
+                    <span ng-if="!$last && shouldComma(getItemsCount())">,</span>
+                    <span ng-if="!shouldComma(getItemsCount())">&nbsp;</span>
+                    <span ng-if="shouldConjoin($index, getItemsCount())">and</span>
+                </span>
+            </p>
+
+        </section>
+
+        <h4>history</h4>
+        <ul class="moves">
+            <li ng-repeat="history in player.history track by $index">
+                {{history.move}} - {{history.result}}
+            </li>
+        </ul>
+    </main>
+</body>
+</html>
