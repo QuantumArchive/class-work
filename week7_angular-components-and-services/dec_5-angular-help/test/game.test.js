@@ -8,17 +8,16 @@ describe( 'game controller', () => {
     // name of module(s) we added to angular, that angular
     // should look in to find "things" like controllers,
     // services, etc.
-    beforeEach(angular.mock.module('controllers', 'services'));
+    beforeEach(angular.mock.module('controllers'));
     
     let $controller = null;
     //, $scope;
 
-    const fn = angular.mock.inject(function(/*$rootScope, */_$controller_, playerService) {
+    const fn = angular.mock.inject(function(/*$rootScope, */_$controller_) {
         // $rootScope allows us to create new scopes
         // $scope = $rootScope.$new();
         // $controller is the generic controller factory
         $controller = _$controller_;
-        console.log(playerService);
     });
 
     beforeEach(fn);
