@@ -1,0 +1,12 @@
+<h1 class="pirate">Pirates!</h1>
+
+<ul>
+    <li ng-repeat="pirate in app.pirates">
+        <pirate-detail
+            pirate="pirate"
+            remove="app.remove">
+        </pirate-detail>
+    </li>
+</ul>
+
+<new-pirate add="app.add"></new-pirate>

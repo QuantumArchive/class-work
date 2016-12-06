@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Our First Webpack App</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <h1>Directives and Components</h1>
+    </header>
+
+    <main ng-controller= 'main'>
+
+        <input ng-model="username" ng-init="username = 'martypdx'">
+        <input ng-model="color" ng-init="color = 'steelblue'">
+        <hr>
+        <div class="greeting" simple-color="color">Hello World</div>
+
+
+        <li ng-repeat="pirate in pirates">
+            <pirate-detail
+                header="Pirate {{$index + 1}}!" 
+                pirate="pirate"
+                username="username"
+                selected="select(pirate)"
+                select="select">
+            </pirate-detail>
+        </li>
+
+    </main>
+</body>
+</html>
