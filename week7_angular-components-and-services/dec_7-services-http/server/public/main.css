@@ -1,0 +1,46 @@
+h1 {
+    color: steelblue;
+}
+
+button.action {
+    margin: 0;
+    margin-right: -5px;
+    background: lightsteelblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button.action:focus {
+    outline:0;
+}
+
+ul.inventory {
+    padding: 0;
+    padding-left: 20px;
+}
+
+ul.moves {
+    list-style: none;
+}._2WGS7czGd4-obdOAw7U8f1 {
+    color: pink;
+    font-family: cursive;
+}
+
+main {
+    position: relative;
+}
+._1TKDC5XfQ1NYpSSgiskpuO {
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+._1TKDC5XfQ1NYpSSgiskpuO button {
+    outline: 0; 
+    color: white;
+}
+.loader {
+    position: absolute;
+    top: 0; left: 40%;
+}
+/*# sourceMappingURL=main.css.map*/

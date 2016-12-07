@@ -1,0 +1,8 @@
+:local(.pirate) {
+    color: pink;
+    font-family: cursive;
+}
+
+main {
+    position: relative;
+}
