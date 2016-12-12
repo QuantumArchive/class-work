@@ -1,0 +1,26 @@
+$height: 100px;
+@import 'corners';
+
+:local(.pirate) {
+
+    height: $height;
+    $input-height: .35 * $height;
+
+    border: 1px solid #aaa;
+    @include rounded(5px);
+
+    div {
+        height: $input-height;
+    }
+
+    button {
+        height: $height - (2 * $input-height) - 20px;
+    }
+
+    label {
+        color: black;
+        font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    }
+
+
+}

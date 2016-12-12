@@ -2,26 +2,34 @@
 ## Review
 
 * Core Build System "Boilerplate" project
-    * Basic node project
-        * github
-        * linting
-        * testing
-        * running
-        * npm
-            * dependency management
-            * scripts
-        * environment
-    * app
-        * node project
-        * webpack
-        * karma, mocha, chai
-        * src
-    * server
-        * node project
-        * mocha, chai, chai-http (superagent)
-        * server.js
-        * lib
-    * repo (Travis CI)
+    * stuff to get you up and running
+    * [boilerplate projects](http://zerosixthree.se/create-your-own-personal-boilerplate/)
+    * See ["JavaScript fatigue"](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=javascript+fatigue)
+    * What do we need for FullStack JS?
+        * Basic node project
+            * source control
+            * linting
+            * testing
+            * running
+            * `npm`
+                * dependency management
+                * scripts
+            * environment
+        * app
+            * node project
+                * `npm init` for `package.json`
+            * running - `webpack`
+                * `webpack.config.js`
+            * testing - `karma`, `mocha`, `chai`
+            * running (actual code to run) `src`
+        * server
+            * node project
+            * testing - `mocha`, `chai`, `chai-http` (`superagent`)
+            * running
+                * `server.js`
+                * `lib`
+        * repo (Travis CI)
+            * run both sub-folder projects
 
 ## SCSS
 
