@@ -59,10 +59,3 @@ describe( 'pirates component', () => {
     });
 
 });
-
-function add(x, y) { return x + y }
-
-const a = 3;
-const b = 4;
-
-add(a, b);
