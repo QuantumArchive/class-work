@@ -3,6 +3,8 @@ const app = express();
 const errorHandler = require('./error-handler');
 const morgan = require('morgan');
 
+const connection = require('mongoose').connection;
+
 const pirates = require('./routes/pirates');
 
 app.use(morgan('dev'));
@@ -33,8 +35,16 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
+
+
 app.use(express.static('./public'));
 
+app.use((req, res, next) => {
+    if (connection.readyState !== 1) {
+        next({ error: 'database not available' });
+    }
+    else next();
+});
 
 
 app.use('/api/pirates', pirates);

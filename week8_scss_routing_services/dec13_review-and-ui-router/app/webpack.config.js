@@ -1,9 +1,12 @@
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+// create an output file to extract to via:
+// new ExtractTextPlugin(targetFileName)
 const cssExtract = new ExtractTextPlugin('main.css');
 
 module.exports = {
+    target: 'web', 
     entry: './src/main.js',
     output: {
         path: '../server/public',
