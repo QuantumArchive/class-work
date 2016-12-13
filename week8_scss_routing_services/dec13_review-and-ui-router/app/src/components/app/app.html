@@ -1,7 +1,11 @@
 <header>
-    <h1>Pirates!</h1>
+    <h1 ng-click="$ctrl.gotoPirates()">Pirates!</h1>
+    <a ui-sref="welcome" ui-sref-active="foo">Home</a>
+    <a ui-sref="pirates" ui-sref-active="foo">Pirates</a>
+    <a ui-sref="about.plain" ui-sref-active="foo">About Plain</a>
+    <a ui-sref="about.special" ui-sref-active="foo">About Special</a>
 </header>
 
 <main>
-    <pirates></pirates>
+    <ui-view></ui-view>
 </main>

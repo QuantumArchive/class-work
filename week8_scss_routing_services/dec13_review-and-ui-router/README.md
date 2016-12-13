@@ -10,7 +10,7 @@
 ## UI-Router
 
 * Why? Major App State Transitions
-* Using ui-router `npm i ui-router@1.0.0-beta3 -S`
+* Using ui-router `npm i angular-ui-router@1.0.0-beta3 -S`
     * if not working, check your version!
 * Configure Routes using `app.config`
     * hint: _this uses a service provider_
@@ -20,4 +20,6 @@
 * outlet via `ui-view`
     * `ui-sref='state'`
     * template v component
-* nested stated and parameters
+* parameters
+* nested state
+* named views
