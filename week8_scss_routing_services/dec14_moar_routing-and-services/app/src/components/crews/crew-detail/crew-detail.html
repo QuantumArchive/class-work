@@ -1,0 +1,17 @@
+<section ng-class="$ctrl.styles.crew">
+    <h2>{{$ctrl.crew.name}}</h2>
+    <div>
+        <img ng-src="{{$ctrl.crew.flag}}">
+    </div>
+
+    <ul ng-if="$ctrl.view === 'detail'">
+        <li ng-repeat="pirate in $ctrl.crew.pirates">
+            <pirate-detail pirate="pirate"></pirate-detail>
+        </li>
+    </ul>
+
+    <div ng-if="$ctrl.view !== 'detail'">
+        There are {{$ctrl.crew.pirates.length}} pirates in this crew.
+    </div>
+
+</section>

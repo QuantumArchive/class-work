@@ -1,0 +1,13 @@
+<section>
+    <div class="loader" ng-if="$ctrl.loading">Loading...</div>
+    <ul>
+        <li ng-repeat="pirate in $ctrl.pirates">
+            <pirate-detail
+                pirate="pirate"
+                remove="$ctrl.remove">
+            </pirate-detail>
+        </li>
+    </ul>
+
+    <new-pirate add="$ctrl.add"></new-pirate>
+</section>
