@@ -1,0 +1,14 @@
+<section>
+    <header>
+        <a ng-click="$ctrl.setDisplay('detail')">detail</a>
+        <a ng-click="$ctrl.setDisplay('thumbnail')">thumbnail</a>
+    </header>
+
+    <section>
+        <ui-view></ui-view>
+    </section>
+
+    <footer>
+        <add-new fields="name, rank" add="$ctrl.add"></add-new>
+    </footer>
+</section>

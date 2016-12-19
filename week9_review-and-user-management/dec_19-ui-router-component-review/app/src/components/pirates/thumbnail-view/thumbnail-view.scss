@@ -1,0 +1,15 @@
+
+:local(.thumbnail) {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+        display: inline-block;
+        height: 100px;
+        width: 100px;
+        margin-right: 5px;
+        border: 1px solid #aaa;
+        clear: both;    
+    }
+}

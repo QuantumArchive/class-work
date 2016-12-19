@@ -1,0 +1,8 @@
+<ul ng-class="$ctrl.styles.thumbnail">
+    <li ng-repeat="pirate in $ctrl.pirates">
+    <span>
+        {{pirate.name}} the {{pirate.rank}}
+        <button ng-if="$ctrl.remove" ng-click="$ctrl.delete()">remove</button>
+    </span>
+    </li>
+</ul>

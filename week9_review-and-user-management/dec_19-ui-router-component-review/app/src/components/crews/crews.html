@@ -1,0 +1,16 @@
+<section ng-class="$ctrl.styles.crews">
+    <div class="loader" ng-if="$ctrl.loading">Loading...</div>
+    <h2>Pirate Crews</h2>
+    <section>
+        <add-new fields="name, flag" add="$ctrl.add"></add-new>
+        <ul>
+            <li ng-repeat="crew in $ctrl.crews"
+                ui-sref="crew({ 
+                    id: crew._id
+                })">
+                <img ng-src="{{crew.flag}}">
+                <span>{{crew.name}}</span>
+            </li>
+        </ul>
+    </section>    
+</section>

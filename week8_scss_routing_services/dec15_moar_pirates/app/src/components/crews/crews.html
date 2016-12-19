@@ -1,0 +1,33 @@
+<section ng-class="$ctrl.styles.crews">
+    <div class="loader" ng-if="$ctrl.loading">Loading...</div>
+    <h2>Pirate Crews</h2>
+    <div>
+        <span ng-repeat="view in ['detail', 'summary']">
+        <input 
+            ng-model="$ctrl.view" 
+            ng-change="$ctrl.updateView()" 
+            name="view" 
+            ng-value="view" 
+            type="radio"> 
+            {{view}}
+        </span> 
+    </div>
+    <section>
+        <add-new fields="name, flag" add="$ctrl.add"></add-new>
+        <ul>
+            <li ng-repeat="crew in $ctrl.crews"
+                ui-sref="crews.detail({ 
+                    id: crew._id,
+                    view: $ctrl.view
+                })">
+
+                <h4>{{crew.name}}</h4>
+                <img ng-src="{{crew.flag}}">
+
+            </li>
+        </ul>
+    </section>
+
+    <ui-view>select a crew to see detail</ui-view>
+    
+</section>

@@ -1,0 +1,12 @@
+<section ng-class="$ctrl.styles.crew">
+    <h2>{{$ctrl.crew.name}}</h2>
+    <div class="flag">
+        <img ng-src="{{$ctrl.crew.flag}}">
+    </div>
+
+    <h3>Pirates</h3>
+    <pirates pirates="$ctrl.crew.pirates"
+             crew-id="$ctrl.crew._id">
+    </pirates>
+
+</section>
