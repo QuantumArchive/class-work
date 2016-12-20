@@ -1,0 +1,9 @@
+{
+  "name": "pirate app",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "cd app && npm i && npm test && cd ../server && npm i && npm test"
+  },
+  "author": "Marty Nelson <marty@martypdx.com>",
+  "license": "ISC"
+}

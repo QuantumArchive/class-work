@@ -1,0 +1,9 @@
+:local(.albums) {
+    position: relative;
+    
+    .add-album {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
