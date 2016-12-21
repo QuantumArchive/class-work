@@ -1,4 +1,26 @@
 :local(.detail) {
+    border-collapse: collapse;
+
+    thead {
+        font-weight: bold;
+
+        td {
+            &.sorted:after {
+                content: '^';
+            }
+
+            &.sorted.desc:after {
+                content: 'v';
+            }
+
+            cursor: pointer;
+        }
+    }
+
+    td.ng-leave {
+        color: red;
+    }
+
     td {
         border: 1px solid #aaa;
         padding: 10px;

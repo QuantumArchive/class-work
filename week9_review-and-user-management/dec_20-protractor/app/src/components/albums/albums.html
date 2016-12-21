@@ -5,7 +5,9 @@
         ng-options="album._id as album.name for album in $ctrl.albums">
     </select>  
     <section class="add-album">
-        <add-new fields="name" inline="true" add="$ctrl.add"></add-new>
+        <add-new inline="true" add="$ctrl.add">
+            <input ng-model="$ctrl.newAlbum.name">
+        </add-new>
     </section>
     <hr>
     <section>

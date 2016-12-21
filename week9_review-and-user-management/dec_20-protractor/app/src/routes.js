@@ -6,11 +6,8 @@ export default function routes($stateProvider, $urlRouterProvider) {
         name: 'welcome',
         url: '/',
         views: {
-            links: {
-                template: '<a ui-sref="admin">admin</a>'
-            },
             main: {
-                template: '<h2>welcome!</h2>' 
+                component: 'welcome' 
             }
         }
     });
@@ -23,9 +20,6 @@ export default function routes($stateProvider, $urlRouterProvider) {
         },
         component: 'albums' ,
         views: {
-            links: {
-                component: 'albumsLinks'
-            },
             header: {
                 component: 'albumsHeader'
             },
@@ -37,7 +31,7 @@ export default function routes($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state({
         name: 'gallery.album',
-        url: '/albums/{id}',
+        url: '/{id}',
         abstract: true,
         default: '.thumbnail',
         resolve: {
@@ -62,5 +56,5 @@ export default function routes($stateProvider, $urlRouterProvider) {
         component: 'thumbnailView'
     });
 
-    $urlRouterProvider.otherwise('/albums');
+    $urlRouterProvider.otherwise('/');
 }

@@ -14,24 +14,24 @@ controller.$inject = ['albumService', '$state'];
 function controller(albumService, $state) {
     this.styles = styles;
 
-    this.$onInit = () => {
-        const albums = this.albums;
-        if(albums.length) {
-            this.selected = albums[0]._id;
-            this.setAlbum();
-        }
+    this.reset = () => {
+        this.newAlbum = {};
     };
+
+    this.reset();
 
     this.setAlbum = () => {
         if(!this.selected) return;
         $state.go('gallery.album', { id: this.selected });
     };
 
-    this.add = album => {
-        albumService.add(album)
+    this.add = () => {
+        albumService.add(this.newAlbum)
             .then(album => {
                 this.albums.push(album);
+                this.reset();
                 this.selected = album._id;
+                this.setAlbum();
             });
     };
 }
