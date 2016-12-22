@@ -17,11 +17,18 @@
         }
     }
 
-    td.ng-leave {
-        color: red;
+    td {
+        &.ng-leave {
+            transition: opacity .5s ease-in-out;
+        }
+        &.ng-leave-active {
+            opacity: 0;
+        }
+
     }
 
     td {
+        opacity: 1;
         border: 1px solid #aaa;
         padding: 10px;
     }
