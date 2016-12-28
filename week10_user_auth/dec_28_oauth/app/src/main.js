@@ -8,6 +8,7 @@ import services from './services';
 import animate from 'angular-animate';
 import uiRouter from 'angular-ui-router';
 import defaultRoute from 'angular-ui-router-default';
+import satellizer from 'satellizer';
 
 // need this for old $stateChanged events,
 // however, we need to manually grab the module 
@@ -22,9 +23,10 @@ import 'ng-dialog/css/ngDialog.css';
 import 'ng-dialog/css/ngDialog-theme-default.css';
 
 // route, http config and auth setup
-import http from './http';
+import http from './auth/http';
 import routes from './routes';
-import auth from './auth';
+import auth from './auth/auth';
+import oauth from './auth/oauth';
 
 const app = angular.module('myApp', [
     components,
@@ -34,7 +36,8 @@ const app = angular.module('myApp', [
     defaultRoute,
     angular.module('ui.router.state.events').name,
     resource,
-    dialog
+    dialog,
+    satellizer
 ]);
 
 app.filter('titleCase', function() {
@@ -44,8 +47,16 @@ app.filter('titleCase', function() {
     };
 });
 
-app.value('apiUrl', 'http://localhost:3000/api');
+// change to .constant from .value because we
+// need the apiUrl in the OAuth .config call
+app.constant('apiUrl', process.env.API_URL || '/api');
 
+// http interceptor for token goodness
 app.config(http);
+// ui-router setup:
 app.config(routes);
+// satellizer setup for oauth
+app.config(oauth);
+
+// state change event hook to check for auth:
 app.run(auth);

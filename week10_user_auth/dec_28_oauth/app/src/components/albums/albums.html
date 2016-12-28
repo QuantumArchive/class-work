@@ -1,0 +1,16 @@
+<section ng-class="$ctrl.styles.albums">
+    <select 
+        ng-model="$ctrl.selected"
+        ng-change="$ctrl.setAlbum(event)"
+        ng-options="album._id as album.name for album in $ctrl.albums">
+    </select>  
+    <section class="add-album">
+        <add-new inline="true" add="$ctrl.add">
+            <input ng-model="$ctrl.newAlbum.name">
+        </add-new>
+    </section>
+    <hr>
+    <section>
+        <ui-view></ui-view>
+    </section>
+</section>

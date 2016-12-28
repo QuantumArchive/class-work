@@ -1,0 +1,9 @@
+<section ng-class="$ctrl.styles.header">
+    <h1>Cuteness in an Image Gallery Album</h1>
+    <nav>
+        <a ui-sref="welcome">welcome</a>
+        <a ui-sref="gallery">gallery</a>
+        <a ng-if="$ctrl.isAuthenticated()" ui-sref="welcome" ng-click="$ctrl.logout()">logout</a>
+    </nav>
+    <section class="custom-headers" ng-transclude></section>
+</section>

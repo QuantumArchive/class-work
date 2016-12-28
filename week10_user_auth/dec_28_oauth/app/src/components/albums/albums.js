@@ -25,7 +25,6 @@ function controller(Album, $state) {
     this.reset();
 
     this.uiOnParamsChanged = params => {
-        console.log(params);
         if(params.id) this.selected = params.id;
     };
 

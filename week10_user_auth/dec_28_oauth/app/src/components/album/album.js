@@ -25,6 +25,12 @@ function controller(imageService, $state) {
         });
     };
 
+    this.tweet = image => {
+        imageService.tweet(image)
+            .then(res => console.log(res))
+            .catch(err => console.error(err));
+    };
+
     this.reset = () => {
         this.newImage = {};
     };
