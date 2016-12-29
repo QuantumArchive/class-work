@@ -1,0 +1,30 @@
+<section ng-class="$ctrl.styles.header">
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <!--<md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>-->
+        <h2>
+          <span>Cutest Image Albums</span>
+        </h2>
+        <span flex></span>
+        <!--<md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+        </md-button>-->
+      </div>
+    </md-toolbar>
+    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+      <md-nav-item md-nav-sref="welcome" name="welcome">Welcome</md-nav-item>
+      <md-nav-item md-nav-sref="gallery" name="gallery">Gallery</md-nav-item>
+      <md-nav-item md-nav-sref="welcome" name="logout">Page Three</md-nav-item>
+      <!-- these require actual routing with ui-router or ng-route, so they won't work in the demo
+      <md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
+      <md-nav-item md-nav-href="#page5" name="page5">Page Five</md-nav-item>
+      -->
+    </md-nav-bar>
+    
+    <!--<section class="custom-headers" ng-transclude></section>-->
+</section>

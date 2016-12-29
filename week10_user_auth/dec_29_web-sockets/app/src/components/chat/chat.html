@@ -1,0 +1,11 @@
+<section ng-class="$ctrl.styles.chat">
+    <ul>
+        <li ng-repeat="message in $ctrl.messages track by $index">
+            {{message.text}}
+        </li>
+    </ul>
+    <form ng-submit="$ctrl.sendMessage()">
+        <input autocomplete="off" ng-model="$ctrl.text"/>
+        <button>Send</button>
+    </form>
+</section>
