@@ -74,7 +74,9 @@ Probably Agenda:
     ```
 
 ## `socket.io`
-* Popular library
+
+* Popular library for web sockets
+* Integrates well with existing express app
 * server and client side implementations
 * Needs `http` server we are using
 * client
@@ -95,36 +97,7 @@ Probably Agenda:
     * Token service
     * etc.
 
-## Project Week
-* Upfront design?
-    * Purpose
-        * get team on same page
-        * capture decision making
-    * not about
-        * detailed specs
-        * avoiding change
-    * Approach:
-        * Wireframe states
-        * Arrows between the boxes (data flows)
-        * Outcomes:
-            * Router states
-                * Data techniques
-            * Needed data (and when)
-            * Server API
-* Infrastructure
-    * Can team members add new stuff to protection
-    * If you're waiting for _fill in the blank_, you're doing it wrong
-        * Mock the missing thing (e.g. hard code data in services)
-        * Write a test
-    * Testing on a week long project
-        * Upfront or as needed
-            * provides feedback
-            * regression protection
-        * After - a chore to check a box with no value
-        * Manual testing is still testing
-        * Be judiscious
-* Grow, don't Birth
-
 ## `angular-animate`
 
 * [awesome tutorial](http://www.nganimate.org/angularjs/tutorial/how-to-make-animations-with-angularjs)
+
